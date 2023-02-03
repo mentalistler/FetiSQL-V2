@@ -1,0 +1,111 @@
+from tools import PanelFind
+from tools import colorprint
+from tools import SQLVulnDetector
+from tools import dorkwithselenium
+from tools import sqlmapper
+
+def main():
+    while(True):
+        colorprint.colorprint("Yapmak istediğiniz işlemi seçin")
+        print("1) Dork Tara")
+        print("2) SQL Injection Kontrolü (results/results.txt)")
+        print("3) Oto Shell (results/sql.txt)")
+        print("4) Oto Dump (results/sql.txt)")
+        print("5) Panel Tara (results/sql.txt)")
+        print("6) Hızlı Panel Tara (results/results.txt)")
+        print("7) Dork Tara > SQL Kontrol > Panel Tara")
+        print("8) Dork Tara > SQL Kontrol > Hızlı Panel Tara")
+        print("9) Dork Tara > SQL Kontrol > Oto Shell")
+        print("10) Dork Tara > SQL Kontrol > Hızlı Panel Tara > Oto Dump")
+        print("11) Dork Tara > SQL Kontrol > Panel Tara > Oto Dump")
+        usr = int(input(">> "))
+        if(usr == 1):
+            colorprint.colorprint("Dork tarama işlemi başlatıldı!")
+            dorkwithselenium.aramamotoru()
+            colorprint.colorprint("Dork tarama işlemi tamamlandı!")
+        elif(usr == 2):
+            UrlList = open("results/results.txt", "r").read().splitlines()
+            colorprint.colorprint("SQL Injection kontrol işlemi başlatıldı!")
+            SQLVulnDetector.VulnMain(UrlList,50) 
+            colorprint.colorprint("SQL Injection kontrol işlemi tamamlandı!")
+        elif(usr ==3):
+            colorprint.colorprint("Oto Shell başlıyor!")
+            sqlmapper.os_shell()
+            colorprint.colorprint("Oto Shell tamamlandı. sql klasöründen detaylara ulaşabilirsiniz!")
+        elif(usr ==4):
+            colorprint.colorprint("Oto Dump başlıyor!")
+            sqlmapper.dumpall()
+            colorprint.colorprint("Oto Dump tamamlandı. sql klasöründen detaylara ulaşabilirsiniz!")
+        elif(usr == 5):
+            colorprint.colorprint("Panel Tarama işlemi başlatıldı!")
+            PanelFind.main(0)
+            colorprint.colorprint("Panel Tarama işlemi tamamlandı!")
+        elif(usr == 6):
+            colorprint.colorprint("Hızlı Panel Tarama işlemi başlatıldı!")
+            PanelFind.main(1)
+            colorprint.colorprint("Hızlı Tarama işlemi tamamlandı!")
+        elif(usr==7):
+            colorprint.colorprint("Dork tarama işlemi başlatıldı!")
+            dorkwithselenium.aramamotoru()
+            colorprint.colorprint("Dork tarama işlemi tamamlandı!")
+            UrlList = open("results/results.txt", "r").read().splitlines()
+            colorprint.colorprint("SQL Injection kontrol işlemi başlatıldı!")
+            SQLVulnDetector.VulnMain(UrlList,50) 
+            colorprint.colorprint("SQL Injection kontrol işlemi tamamlandı!")
+            colorprint.colorprint("Panel Tarama işlemi başlatıldı!")
+            PanelFind.main(0)
+            colorprint.colorprint("Panel Tarama işlemi tamamlandı!")
+        elif(usr==8):
+            colorprint.colorprint("Dork tarama işlemi başlatıldı!")
+            dorkwithselenium.aramamotoru()
+            colorprint.colorprint("Dork tarama işlemi tamamlandı!")
+            UrlList = open("results/results.txt", "r").read().splitlines()
+            colorprint.colorprint("SQL Injection kontrol işlemi başlatıldı!")
+            SQLVulnDetector.VulnMain(UrlList,50) 
+            colorprint.colorprint("SQL Injection kontrol işlemi tamamlandı!")
+            colorprint.colorprint("Panel Tarama işlemi başlatıldı!")
+            PanelFind.main(1)
+            colorprint.colorprint("Panel Tarama işlemi tamamlandı!")
+        elif(usr==9):
+            colorprint.colorprint("Dork tarama işlemi başlatıldı!")
+            dorkwithselenium.aramamotoru()
+            colorprint.colorprint("Dork tarama işlemi tamamlandı!")
+            UrlList = open("results/results.txt", "r").read().splitlines()
+            colorprint.colorprint("SQL Injection kontrol işlemi başlatıldı!")
+            SQLVulnDetector.VulnMain(UrlList,50) 
+            colorprint.colorprint("SQL Injection kontrol işlemi tamamlandı!")
+            colorprint.colorprint("Oto Shell işlemi başlatıldı!")
+            sqlmapper.os_shell()
+            colorprint.colorprint("Oto Shell işlemi tamamlandı!")
+        elif(usr==10):
+            colorprint.colorprint("Dork tarama işlemi başlatıldı!")
+            dorkwithselenium.aramamotoru()
+            colorprint.colorprint("Dork tarama işlemi tamamlandı!")
+            UrlList = open("results/results.txt", "r").read().splitlines()
+            colorprint.colorprint("SQL Injection kontrol işlemi başlatıldı!")
+            SQLVulnDetector.VulnMain(UrlList,50) 
+            colorprint.colorprint("SQL Injection kontrol işlemi tamamlandı!")
+            colorprint.colorprint("Panel Tarama işlemi başlatıldı!")
+            PanelFind.main(1)
+            colorprint.colorprint("Panel Tarama işlemi tamamlandı!")
+            colorprint.colorprint("Oto Dump işlemi başlatıldı!")
+            sqlmapper.dumpall()
+            colorprint.colorprint("Oto Dump tamamlandı. sql klasöründen detaylara ulaşabilirsiniz!")
+            pass
+        elif(usr==11):
+            colorprint.colorprint("Dork tarama işlemi başlatıldı!")
+            dorkwithselenium.aramamotoru()
+            colorprint.colorprint("Dork tarama işlemi tamamlandı!")
+            UrlList = open("results/results.txt", "r").read().splitlines()
+            colorprint.colorprint("SQL Injection kontrol işlemi başlatıldı!")
+            SQLVulnDetector.VulnMain(UrlList,50) 
+            colorprint.colorprint("SQL Injection kontrol işlemi tamamlandı!")
+            colorprint.colorprint("Panel Tarama işlemi başlatıldı!")
+            PanelFind.main(0)
+            colorprint.colorprint("Panel Tarama işlemi tamamlandı!")
+            colorprint.colorprint("Oto Dump işlemi başlatıldı!")
+            sqlmapper.dumpall()
+            colorprint.colorprint("Oto Dump tamamlandı. sql klasöründen detaylara ulaşabilirsiniz!")
+        else:
+            colorprint.colorprint("Lütfen yapmak istediğiniz işlemi doğru girin.","v")
+main()
