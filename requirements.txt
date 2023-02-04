@@ -3,3 +3,5 @@ beautifulsoup4
 chromedriver_autoinstaller
 geckodriver_autoinstaller
 colorama
+requests
+ftplib
