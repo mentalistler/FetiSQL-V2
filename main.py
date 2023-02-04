@@ -12,7 +12,7 @@ def main():
         print("3) Oto Shell (results/sql.txt)")
         print("4) Oto Dump (results/sql.txt)")
         print("5) Panel Tara (results/sql.txt)")
-        print("6) Hızlı Panel Tara (results/results.txt)")
+        print("6) Hızlı Panel Tara (results/sql.txt)")
         print("7) Dork Tara > SQL Kontrol > Panel Tara")
         print("8) Dork Tara > SQL Kontrol > Hızlı Panel Tara")
         print("9) Dork Tara > SQL Kontrol > Oto Shell")
