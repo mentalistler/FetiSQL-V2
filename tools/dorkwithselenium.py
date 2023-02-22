@@ -6,8 +6,6 @@ from urllib.parse import urlparse, urlsplit, urlunsplit
 from tools import colorprint
 arama_motorlari = [
     "http://www.google.com/search?q={Key}&num=100&start=0",
-    #"http://www.google.com/search?q={Key}&num=100&start=100",
-   # "http://www.google.com/search?q={Key}&num=100&start=200",
     
 
 ]
@@ -33,7 +31,7 @@ def aramamotoru():
                 motor = arama_motorlari[h].replace("{Key}",dorks[u])
                 driver.get(motor)
                 page_source = driver.page_source
-                if(page_source.find("captcha")>-1):
+                if(page_source.find("captcha-form")>-1):
                     colorprint.colorprint("Captchayı çözün ardından [Enter] tuşuna basın.","w")
                     a = input()
                 pattern = r'<a href="(.*?)"'
